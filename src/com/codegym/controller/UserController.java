@@ -24,10 +24,10 @@ public class UserController {
     public ModelAndView login(@ModelAttribute("login") Login login) {
         User user = UserDao.checkLogin(login);
         if (user == null) {
-            ModelAndView modelAndView = new ModelAndView("Error!");
+            ModelAndView modelAndView = new ModelAndView("error");
             return modelAndView;
         } else {
-            ModelAndView modelAndView = new ModelAndView("User");
+            ModelAndView modelAndView = new ModelAndView("user");
             modelAndView.addObject("user", user);
             return modelAndView;
         }
